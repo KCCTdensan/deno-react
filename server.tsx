@@ -8,7 +8,7 @@ const style = "/app.css";
 const port = 8000;
 
 const client = async (): Promise<Uint8Array> => {
-  // リリースモードかどうかの判定
+  // ToDo: リリースモードかどうかの判定，バンドル
   return await Deno.readFile(`.${dist}`);
 };
 
@@ -51,7 +51,7 @@ serve(
       //
       default: {
         return new Response(
-          "<!DOCTYPE html>" + renderToString(Root(dist, style)),
+          "<!DOCTYPE html>" + renderToString(<Root />),
           { headers: { "Content-Type": "text/html" } },
         );
       }
