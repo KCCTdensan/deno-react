@@ -2,11 +2,13 @@
 
 ## 使い方
 
+<!--
 ### Debug
 
 ```
 % deno run --allow-net --allow-read --import-map deps.json server.tsx
 ```
+-->
 
 ### Release
 

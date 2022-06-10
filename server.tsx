@@ -12,17 +12,17 @@ const client = async (): Promise<Uint8Array> => {
   return await Deno.readFile(`.${dist}`);
 };
 
-const Root = (js: string, css: string) => (
+const Root = () => (
   <html lang="ja">
     <head>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>しりとり</title>
-      <link rel="stylesheet" href={css} />
+      <link rel="stylesheet" href={style} />
     </head>
     <body>
       <div id="app" />
-      <script type="module" src={js}></script>
+      <script type="module" src={dist}></script>
     </body>
   </html>
 );
